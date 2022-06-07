@@ -113,7 +113,7 @@ img {
 
 .logo:hover,
 .logo:focus {
-  outline: 2px solid var(--accent-color);
+  outline: 1px solid var(--logo-color);
 
   transition: outline var(--time) var(--timing);
 }
@@ -294,63 +294,6 @@ img {
   border-radius: 4px;
 }
 
-/* ---backdrop--- */
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  background-color: rgba(0, 0, 0, 0.2);
-
-  opacity: 1;
-  transition: opacity var(--time) var(--timing);
-}
-
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0, 9);
-}
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 528px;
-  height: 581px;
-  background-color: var(--background-color);
-
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform var(--time) var(--timing);
-}
-
-.modal-button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-
-  display: flex;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: var(--background-color);
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-
-  transition: border var(--time) var(--timing);
-}
-
-.modal-button:hover,
-.modal-button:focus {
-  border: 1px solid var(--accent-color);
-}
-
 /* --------------SPECIFICS------------- */
 
 .specifics-list {
@@ -416,6 +359,33 @@ img {
   line-height: 1.17;
   text-align: center;
   margin-bottom: 50px;
+}
+
+.wark-about-item {
+  position: relative;
+}
+.work-abaut {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  background-color: rgba(47, 48, 58, 0.8);
+
+  display: flex;
+  width: 100%;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-abaut-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--background-color);
 }
 
 /* --------------TEAM------------- */
@@ -486,10 +456,14 @@ img {
   align-items: center;
   justify-content: center;
   color: var(--color-icons);
+
+  transition: background-color var(--time) var(--timing), color var(--time) var(--timing);
 }
+
 .team-soc-icon {
   fill: currentColor;
 }
+
 .team-soc-link:hover,
 .team-soc-link:focus {
   background-color: var(--accent-color);
@@ -530,7 +504,10 @@ img {
   border: 1px solid var(--color-icons);
   border-radius: 4px;
   color: var(--color-icons);
+
+  transition: color var(--time) var(--timing), border var(--time) var(--timing);
 }
+
 .clients-icon {
   fill: currentColor;
 }
@@ -560,8 +537,15 @@ img {
   color: var(--third-text-color);
 }
 
+.logo-footer:hover,
+.logo-footer:focus {
+  outline: 1px solid var(--background-color);
+}
+
 .footer-list .link {
   color: var(--address-color);
+
+  transition: color var(--time) var(--timing);
 }
 .footer-list .link:hover,
 .footer-list .link:focus {
@@ -614,7 +598,10 @@ img {
   align-items: center;
   justify-content: center;
   fill: var(--background-color);
+
+  transition: background-color var(--time) var(--timing);
 }
+
 .footer-join-link:hover,
 .footer-join-link:focus {
   background-color: var(--accent-color);
@@ -641,11 +628,12 @@ img {
   margin-left: -30px;
 }
 
-.work-filter {
+.work-filter-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
   color: var(--primary-text-color);
-}
-.filter-text {
-  color: var(--second-text-color);
 }
 
 .work-list > .item {
@@ -661,23 +649,10 @@ img {
   border-top: none;
 }
 
-.filter .filter-text {
-  color: var(--second-text-color);
-}
-.filter .button {
-  font-weight: 500;
-  line-height: 1.62;
-}
-
-.work-list .title {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 2;
-  letter-spacing: 0.06em;
-}
 .work-list .filter-text {
   margin-top: 4px;
 
+  color: var(--second-text-color);
   line-height: 1.8;
 }
 
@@ -689,6 +664,10 @@ img {
 
   background-color: var(--btn-color);
   color: var(--primary-text-color);
+  border-radius: 4px;
+
+  transition: background-color var(--time) var(--timing), color var(--time) var(--timing),
+    box-shadow var(--time) var(--timing);
 }
 
 .filter-button:hover,
@@ -697,7 +676,6 @@ img {
   color: var(--third-text-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
 }
 
 .card-item-link {
@@ -708,4 +686,64 @@ img {
 .card-item-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+/* ---backdrop--- */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity var(--time) var(--timing);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0, 9);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 528px;
+  height: 581px;
+  background-color: var(--background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--time) var(--timing);
+}
+
+.modal-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--background-color);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+
+  transition: outline var(--time) var(--timing);
+}
+
+.modal-button:hover,
+.modal-button:focus {
+  outline: 1px solid;
 }
