@@ -111,11 +111,8 @@ img {
   line-height: 1.2;
 }
 
-.logo:hover,
 .logo:focus {
   outline: 1px solid var(--logo-color);
-
-  transition: outline var(--time) var(--timing);
 }
 .logo-span {
   color: var(--accent-color);
@@ -217,6 +214,7 @@ img {
   height: 100%;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 
 .mail-icon {
@@ -510,7 +508,8 @@ img {
 .clients-icon {
   fill: currentColor;
 }
-.clients-link:hover {
+.clients-link:hover,
+.clients-link:focus {
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
@@ -536,7 +535,6 @@ img {
   color: var(--third-text-color);
 }
 
-.logo-footer:hover,
 .logo-footer:focus {
   outline: 1px solid var(--background-color);
 }
@@ -731,10 +729,11 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
 
   opacity: 1;
-  transition: opacity var(--time) var(--timing);
+  transition: opacity var(--time) var(--timing), visibility var(--time) var(--timing);
 }
 
 .backdrop.is-hidden {
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
@@ -747,7 +746,8 @@ img {
   top: 50%;
   left: 50%;
   width: 528px;
-  height: 581px;
+  min-height: 581px;
+  border-radius: 15px;
   background-color: var(--background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -767,15 +767,13 @@ img {
   height: 30px;
   padding: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: var(--background-color);
+  background-color: transparent;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-
-  transition: outline var(--time) var(--timing);
+  padding: 0;
 }
 
-.modal-button:hover,
 .modal-button:focus {
-  outline: 1px solid;
+  outline: 1px solid var(--accent-color);
 }
